@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Megal GL Version 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+    <script>
+        function updateStats(memuse) {
+            document.getElementById('rss').innerHTML = memuse.rss;
+            document.getElementById('heapTotal').innerHTML = memuse.heapTotal;
+            document.getElementById('heapUsed').innerHTML = memuse.heapUsed;
+        }
+        var host = window.document.location.host.replace(/:.*/, '');
+        var ws = new WebSocket('ws://' + host + ':1337');
+        ws.onmessage = function (event) {
+            updateStats(JSON.parse(event.data));
+        };
+    </script>
+</head>
+<body>
+    <strong>Server Stats foi</strong><br>
+    RSS: <div id='rss'></div><br>
+    Heap total: <div id='heapTotal'></div><br>
+    Heap used: <div id='heapUsed'></div><br>
+    <script src="lib/gl-matrix/dist/gl-matrix-min.js"></script>
+    <script src="lib/requirejs/require.js"></script>
+    <script src="require.config.js"></script>
+</body>
+</html>

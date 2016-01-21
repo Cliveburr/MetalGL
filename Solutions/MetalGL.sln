@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - WebUI", "01 - WebUI", "{2FEC8A6F-846B-4EFF-A3DC-D8B5E1C9D333}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "MetalGL.WebUI", "..\MetalGL.WebUI\MetalGL.WebUI.njsproj", "{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Core", "02 - Core", "{46BA28F9-5ADA-43CE-BD31-4DA4DF0FAC93}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "MetalGL", "..\MetalGL\MetalGL.njsproj", "{7ACB4189-82CE-493D-906B-639477DE8FC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ACB4189-82CE-493D-906B-639477DE8FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ACB4189-82CE-493D-906B-639477DE8FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ACB4189-82CE-493D-906B-639477DE8FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ACB4189-82CE-493D-906B-639477DE8FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0CB8CA2-32C8-4A78-AD76-10E4E1FA88CE} = {2FEC8A6F-846B-4EFF-A3DC-D8B5E1C9D333}
+		{7ACB4189-82CE-493D-906B-639477DE8FC4} = {46BA28F9-5ADA-43CE-BD31-4DA4DF0FAC93}
+	EndGlobalSection
+EndGlobal

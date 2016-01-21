@@ -1,0 +1,5 @@
+﻿
+module objects {
+}
+
+export = objects;

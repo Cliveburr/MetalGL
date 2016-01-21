@@ -1,0 +1,13 @@
+{
+  "name": "MetalGL",
+  "version": "0.0.0",
+  "description": "MetalGL",
+  "main": "server.js",
+  "author": {
+    "name": "AManzoli",
+    "email": "clivedurr@gmail.com"
+  },
+  "dependencies": {
+    "ws": "^1.0.1"
+  }
+}
