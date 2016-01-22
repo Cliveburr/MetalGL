@@ -56,15 +56,16 @@
     <Folder Include="lib\gl-matrix\" />
     <Folder Include="lib\gl-matrix\dist\" />
     <Folder Include="lib\requirejs\" />
+    <Folder Include="MetalGL\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\typings\" />
     <Folder Include="Scripts\typings\gl-matrix\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Index.ts" />
-    <TypeScriptCompile Include="MetalGL.ts" />
-    <TypeScriptCompile Include="ObjectsGL.ts" />
-    <TypeScriptCompile Include="ProgramsGL.ts" />
+    <TypeScriptCompile Include="MetalGL\MetalGL.ts" />
+    <TypeScriptCompile Include="MetalGL\ObjectsGL.ts" />
+    <TypeScriptCompile Include="MetalGL\ElementsGL.ts" />
     <TypeScriptCompile Include="Scripts\typings\gl-matrix\gl-matrix.d.ts" />
   </ItemGroup>
   <ItemGroup>

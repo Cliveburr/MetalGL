@@ -1,20 +1,27 @@
-﻿import mgl = require('./MetalGL');
-import programs = require('./ProgramsGL');
+﻿import mgl = require('./MetalGL/MetalGL');
+import els = require('./MetalGL/ElementsGL');
 
-var render = new mgl.MetalGL();
-render.bindElement(document.body);
+//var render = new mgl.MetalGL();
+//render.bindElement(document.body);
+//els.useElements(render);
 
-var GL = render.gl;
+//var ge = new els.TriangleGeometry([-1, -1, 1, -1, 1, 1]);
+//var blank = new els.ColorMaterial([0, 0, 0, 0]);
+//var triangleMesh = render.createMesh(ge, blank);
+
+//var t1 = triangleMesh.new();
+
+//var GL = render.gl;
 
 function teste1() {
     // criar o elemento e bindar na pagina
-    //var nel = document.createElement('canvas');
-    //nel.style.zIndex = '0';
-    //nel.width = window.innerWidth;
-    //nel.height = window.innerHeight;
-    //document.body.appendChild(nel);
+    var nel = document.createElement('canvas');
+    nel.style.zIndex = '0';
+    nel.width = window.innerWidth;
+    nel.height = window.innerHeight;
+    document.body.appendChild(nel);
 
-    //var GL = <WebGLRenderingContext>nel.getContext('webgl', { antialias: true });
+    var GL = <WebGLRenderingContext>nel.getContext('experimental-webgl', { antialias: true });
 
     var shader_vertex_source = `
 attribute vec2 position;
@@ -66,6 +73,10 @@ void main(void) {
         -1, -1, //first summit -> bottom left of the viewport
         1, -1, //bottom right of the viewport
         1, 1,  //top right of the viewport
+        0, 1,
+        0, 0,
+        -1, 0
+
     ];
 
     var TRIANGLE_VERTEX = GL.createBuffer();
@@ -75,7 +86,7 @@ void main(void) {
         GL.STATIC_DRAW);
 
     //FACES :
-    var triangle_faces = [0, 1, 2];
+    var triangle_faces = [0, 1, 2, -1, -1, -1];
     var TRIANGLE_FACES = GL.createBuffer();
     GL.bindBuffer(GL.ELEMENT_ARRAY_BUFFER, TRIANGLE_FACES);
     GL.bufferData(GL.ELEMENT_ARRAY_BUFFER,
@@ -88,7 +99,7 @@ void main(void) {
 
     var animate = function () {
 
-        //GL.viewport(0.0, 0.0, nel.width, nel.height);
+        GL.viewport(0.0, 0.0, nel.width, nel.height);
         GL.clear(GL.COLOR_BUFFER_BIT);
 
         GL.bindBuffer(GL.ARRAY_BUFFER, TRIANGLE_VERTEX);
@@ -96,7 +107,7 @@ void main(void) {
         GL.vertexAttribPointer(_position, 2, GL.FLOAT, false, 4 * 2, 0) ;
 
         GL.bindBuffer(GL.ELEMENT_ARRAY_BUFFER, TRIANGLE_FACES);
-        GL.drawElements(GL.TRIANGLES, 3, GL.UNSIGNED_SHORT, 0);
+        GL.drawElements(GL.TRIANGLES, 6, GL.UNSIGNED_SHORT, 0);
         GL.flush();
 
         window.requestAnimationFrame(animate);
