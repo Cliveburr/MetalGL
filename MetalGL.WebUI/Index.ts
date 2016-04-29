@@ -1,5 +1,19 @@
-﻿import mgl = require('./MetalGL/MetalGL');
-import els = require('./MetalGL/ElementsGL');
+﻿import Engine = require('./MetalEngine/Engine');
+import Keyboard = require('./MetalEngine/Inputs/Keyboard');
+import Mouse = require('./MetalEngine/Inputs/Mouse');
+import WebGLRenderer = require('./MetalEngine/WebGL/WebGLRenderer');
+
+var engine = new Engine();
+engine.addInput(Keyboard);
+engine.addInput(Mouse);
+
+var renderer = new WebGLRenderer();
+renderer.attach(document.body);
+engine.setRenderer(renderer);
+
+
+
+engine.start();
 
 //var render = new mgl.MetalGL();
 //render.bindElement(document.body);
@@ -116,4 +130,4 @@ void main(void) {
     animate();
 }
 
-teste1();
+//teste1();

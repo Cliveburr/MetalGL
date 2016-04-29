@@ -5,8 +5,8 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>MetalGL</Name>
     <RootNamespace>MetalGL</RootNamespace>
-    <ToolsVersionPromptShown>1.6</ToolsVersionPromptShown>
-    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <ToolsVersionPromptShown>1.7</ToolsVersionPromptShown>
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
     <DebuggerPort>
     </DebuggerPort>
   </PropertyGroup>

@@ -52,3 +52,11 @@ Temporary Items
 .dat
 .txt
 .suo
+
+**/*.suo
+**/*.dat
+**/*.js
+**/*.js.map
+**/bin
+**/obj
+**/node_modules
