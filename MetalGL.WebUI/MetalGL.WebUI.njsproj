@@ -56,9 +56,9 @@
     <Folder Include="lib\gl-matrix\" />
     <Folder Include="lib\gl-matrix\dist\" />
     <Folder Include="lib\requirejs\" />
-    <Folder Include="MetalEngine\Inputs\" />
+    <Folder Include="MetalGL\Inputs\" />
+    <Folder Include="MetalGLOld\" />
     <Folder Include="MetalGL\" />
-    <Folder Include="MetalEngine\" />
     <Folder Include="System\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\typings\" />
@@ -66,13 +66,15 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Index.ts" />
-    <TypeScriptCompile Include="MetalEngine\Engine.ts" />
-    <TypeScriptCompile Include="MetalEngine\Inputs\Mouse.ts" />
-    <TypeScriptCompile Include="MetalEngine\Inputs\Keyboard.ts" />
-    <TypeScriptCompile Include="MetalEngine\MetalEngine.d.ts" />
-    <TypeScriptCompile Include="MetalGL\MetalGL.ts" />
-    <TypeScriptCompile Include="MetalGL\ObjectsGL.ts" />
-    <TypeScriptCompile Include="MetalGL\ElementsGL.ts" />
+    <TypeScriptCompile Include="MetalGL\Engine.ts" />
+    <TypeScriptCompile Include="MetalGL\Inputs\Mouse.ts" />
+    <TypeScriptCompile Include="MetalGL\Inputs\Keyboard.ts" />
+    <TypeScriptCompile Include="MetalGL\MetalEngine.d.ts" />
+    <TypeScriptCompile Include="MetalGL\Program.ts" />
+    <TypeScriptCompile Include="MetalGL\Prototype.ts" />
+    <TypeScriptCompile Include="MetalGLOld\MetalGL.ts" />
+    <TypeScriptCompile Include="MetalGLOld\ObjectsGL.ts" />
+    <TypeScriptCompile Include="MetalGLOld\ElementsGL.ts" />
     <TypeScriptCompile Include="Scripts\typings\gl-matrix\gl-matrix.d.ts" />
     <TypeScriptCompile Include="System\Event.ts" />
     <TypeScriptCompile Include="System\System.d.ts" />

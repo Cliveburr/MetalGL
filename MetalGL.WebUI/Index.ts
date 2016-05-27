@@ -1,17 +1,55 @@
-﻿import Engine = require('./MetalEngine/Engine');
-import Keyboard = require('./MetalEngine/Inputs/Keyboard');
-import Mouse = require('./MetalEngine/Inputs/Mouse');
-import WebGLRenderer = require('./MetalEngine/WebGL/WebGLRenderer');
+﻿import Engine = require('./MetalGL/Engine');
+import Keyboard = require('./MetalGL/Inputs/Keyboard');
+import Mouse = require('./MetalGL/Inputs/Mouse');
+import Program = require('./MetalGL/Program');
+import Prototype = require('./MetalGL/Prototype');
 
 var engine = new Engine();
+engine.attach(document.body);
 engine.addInput(Keyboard);
 engine.addInput(Mouse);
 
-var renderer = new WebGLRenderer();
-renderer.attach(document.body);
-engine.setRenderer(renderer);
+
+class ColorProgram extends Program {
+    protected _sh_vertex(): string {
+        return `
+attribute vec2 position;
+
+void main(void) {
+    gl_Position = vec4(position, 0.0, 1.0);
+}`;
+    }
+
+    protected _sh_fragment(): string {
+        return `
+precision highp float;
+
+void main(void) {
+    gl_FragColor = vec4(0.1, 0.1, 0.1, 1.0);
+}`;
+    }
+
+    public useProgram(): void {
+    }
+}
+
+var colorProgram = new ColorProgram();
+engine.addProgram(colorProgram);
 
 
+class Triangle extends Prototype {
+    public static program: MetalEngine.IProgram;
+
+    constructor(ps: number[]) {
+        super();
+        Triangle.program
+    }
+}
+
+colorProgram.addPrototype(Triangle);
+
+var t1 = new Triangle([-1, -1, 1, -1, 1, 1]);
+engine.addObject(t1);
 
 engine.start();
 
